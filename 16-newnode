@@ -1,0 +1,11 @@
+#
+# Crear otro nodo elastic usando el toekn de Enrollment del es01
+#
+docker rm -f es02
+. ./.env
+docker run -e ENROLLMENT_TOKEN=${ENROLLMENT_TOKEN} --name es02 --net elastic -d elasticsearch:8.14.0
+#
+# Paso 17 Verificar que se ha unido bien
+#
+sleep 10
+curl --cacert http_ca.crt -u elastic:$ELASTIC_PASSWORD https://localhost:9200/_cat/nodes

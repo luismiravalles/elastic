@@ -1,0 +1,4 @@
+#
+# Crear enrollment para kibana
+#
+docker exec es01 bin/elasticsearch-create-enrollment-token -s kibana --url "https://localhost:9200" -f

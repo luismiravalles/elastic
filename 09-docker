@@ -1,0 +1,4 @@
+# Ejecutar el contenedor Elastic Maestro, la primera vez generará una contraseña
+#
+docker rm -f es01
+docker run --name es01 --net elastic -p 9200:9200 -m 1GB -d elasticsearch:8.14.0

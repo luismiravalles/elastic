@@ -1,0 +1,5 @@
+#
+# Crear un Enrollment Token y guardarlo.
+#
+ENROLLMENT_TOKEN=$(docker exec es01 bin/elasticsearch-create-enrollment-token -s node)
+echo "ENROLLMENT_TOKEN=${ENROLLMENT_TOKEN}" >>.env

@@ -1,0 +1,6 @@
+#
+# Generar password , cerificados y Token
+#
+ELASTIC_PASSWORD=$(docker exec es01 bash bin/elasticsearch-reset-password -b -f -s -u elastic)
+echo "ELASTIC_PASSWORD=$ELASTIC_PASSWORD" >.env
+
